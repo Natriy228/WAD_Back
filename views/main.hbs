@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+    <title>BMSTU</title>
+</head>
+<body>
+    <h1>Hello BMSTU Students!</h1>
+    <p>Welcome to NestJS + Handlebars example.</p>
+    <ul>
+    {{#each list}}
+      {{#if this.like}}
+        <li>We like {{ this.name }}!</li>
+      {{else}}
+        <li>We do not like {{ this.name }}.</li>
+      {{/if}}
+    {{/each}}
+    </ul>
+</body>
+</html>

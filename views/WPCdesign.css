@@ -1,0 +1,147 @@
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mainFrame {
+	background: #363738;
+	width: 608px;
+	max-width: 100%;
+	min-height: 100vh;
+}
+
+.controlPanelMain {
+	background: #222222;
+	
+	border: 3px solid #646465;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	box-sizing: border-box;
+	
+	height: 5.72vh;
+	width: 100%;
+}
+
+.controlPanelCircle {
+	background: #222222;
+	
+	border: 3px solid #646465;
+	border-radius: 50%;
+	box-sizing: border-box;
+	
+	margin-left: 50%;
+    transform: translate(-50%, 0%);
+	height: 9.15vh;
+	aspect-ratio: 1;
+	
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.controlButton {
+	background: rgba(0, 0, 0, 0);
+	border: 0;
+	
+	cursor: pointer;
+	
+	font-family: Times new roman;
+	font-weight: bold;
+	color: #E1E3E6;
+}
+
+.standartInput {
+	background: #D9D9D9;
+	
+	border: 3px solid #646465;
+	border-radius: 8px;
+	box-sizing: border-box;
+	
+	font-size: 18;
+	font-family: Times new roman;
+	color: black;
+}
+
+.submitButton {
+	background: #3FA22B;
+	
+	border: 0;
+	border-radius: 8px;
+	
+	cursor: pointer;
+	
+	color: #E1E3E6;
+}
+.submitButton:active {
+	background: green;
+}
+
+.waveCard {
+    position: relative;
+    width: 47.76%;
+    height: 380px;
+    overflow: hidden;
+    background-color: #6e6e6e;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.waveCardContent {
+	position: relative;
+	z-index: 2;
+	padding: 16px 16px 0 16px;
+}
+
+.waveCardTitle {
+	font-family: Times new roman;
+	font-weight: bold;
+	font-size: 18;
+	color: #E1E3E6;
+}
+
+.waveCardDescription {
+	font-family: Times new roman;
+	font-size: 14;
+	line-height: 1.17;
+	color: #E1E3E6;
+}
+
+.waveCardButton {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	padding: 12px 0;
+	background-color: #BEF3FF;
+	color: black;
+	text-align: center;
+	font-size: 18;
+	border: 0;
+	cursor: pointer;
+}
+.waveCardButton:active {
+	background-color: lightblue;
+}
+
+.fileSearchButton {
+	background: rgba(0, 0, 0, 0);
+	
+	border: 4 dashed black;
+	border-radius: 20px;
+	
+	cursor: pointer;
+	
+	color: #E1E3E6;
+}
+
+.fileSearchButton:active {
+	border: 4 solid grey;
+}

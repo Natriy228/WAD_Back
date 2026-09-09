@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление</title>
+    <link rel="stylesheet" href="/WPCdesign.css">
+</head>
+<body>
+    <div class="mainFrame">
+	
+		<div id="mainContainer" style="display:grid; grid-template-columns:1fr; grid-template-rows:1fr; width:100%; height:100vh">
+		
+			<div id="videoContainer" style="grid-area:1/1">
+				<image style="width:100%; height:100%" src=""></image>
+			</div>
+			
+			<div id="buttonsContainer" style="grid-area:1/1; display:grid; align-content:end">
+	
+				<div id="addControlsField" style="grid-area:1/1; display:flex; flex-direction:column; padding-left: 16px; padding-right: 16px">
+					
+					<div style="display:grid; justify-content:center; margin-bottom: 3%">
+						<button class="fileSearchButton" style="height:11.44vh; aspect-ratio: 1;">+</button>
+					</div>
+					<div style="display:grid; justify-content:center; margin-bottom: 45%">
+						<button class="fileSearchButton" style="height:11.44vh; aspect-ratio: 1;">+</button>
+					</div>
+					
+					<table style="margin:0">
+						<tr>
+						<td colspan="2"><input placeholder="Название" style="width:100%; height:4.58vh" class="standartInput" type="text" value="{{foundCard.name}}"></td>
+						</tr>
+						<tr>
+						<td><input placeholder="Описание" style="width:100%; height:9.16vh" class="standartInput" type="text" value="{{foundCard.desc}}"></td>
+						<td style="display:grid"><button class="submitButton" style="width:100%; height:9.16vh">ОК</button></td>
+						</tr>
+					</table>
+					
+				</div>
+				
+				<div id="controlPanel" style="position:relative; width:100%; height:9.15vh; grid-area:2/1">
+					<div class="controlPanelMain" style="position:absolute; bottom:0">
+						<table style="width:100%; height:100%; text-align:center;">
+							<tr>
+								<td><form method="GET" action="/tiles/1"><button class="controlButton" style="font-size:28px; margin-right:9%">=</button></form></td>
+								<td><form method="GET" action="/tiles"><button class="controlButton" style="font-size:28px; margin-left:9%">::</button></form></td>
+							</tr>
+						</table>
+					</div>
+					<div class="controlPanelCircle" style="position:absolute; bottom:0">
+						<form method="GET" action="/new"><button class="controlButton" style="font-size:64px;">+</button></form>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+</body>
+</html>
