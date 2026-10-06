@@ -67,9 +67,9 @@ export class WavesController {
 
   @Post('public-draft')
   @Redirect('/waves', 302)
-  async publicDraft(@Body('LW') LW: string, @Body('HW') HW: string, @Body('EC') EC: string, @Body('desc') desc: string) {
-    if (LW == undefined || HW == undefined || EC == undefined || desc == undefined) return;
-    await this.cardsService.PDraft(+LW, +HW, +EC, desc);
+  async publicDraft(@Body('LW') LW: string, @Body('HW') HW: string, @Body('desc') desc: string) {
+    if (LW == undefined || HW == undefined || desc == undefined) return;
+    await this.cardsService.PDraft(+LW, +HW, desc);
   }
 
   @Post('delete-card')

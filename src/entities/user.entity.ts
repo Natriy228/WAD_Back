@@ -5,6 +5,9 @@ export class User {
   @PrimaryColumn()
   id: number;
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ type: 'varchar', length: 255, unique: true })
   nickName: string;
+
+  @Column({ type: 'varchar', length: 255, unique: true })
+  password: string;
 }

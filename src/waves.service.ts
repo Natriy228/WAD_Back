@@ -42,22 +42,21 @@ export class WavesService {
         const allCards = await this.waveRepository.find({ where: { } });
         let newID = 1;
         for (let i = 0; i < allCards.length; ++i) {
-          newID = Math.max(allCards[i].id);
+          newID = Math.max(newID, allCards[i].id);
         }
         newID += 1
-        const newWave = await this.waveRepository.create({id: newID, status: "draft", name: gname, desc: "", lowWave: 0, highWave: 0, effClass: 0, img: gimg, video: gvideo});
+        const newWave = await this.waveRepository.create({id: newID, status: "draft", name: gname, desc: "", lowWave: 0, highWave: 0, img: "/placeholders/gearsLoading.png", video: "/placeholders/gearboxLoading.mp4"});
         await this.waveRepository.save(newWave);
     }
     else {
-        await this.waveRepository.update(curDrafts[0].id, {name: gname, img: gimg, video: gvideo});
+        await this.waveRepository.update(curDrafts[0].id, {name: gname, img: "/placeholders/gearsLoading.png", video: "/placeholders/gearboxLoading.mp4"});
     }
   }
 
-  async PDraft(LW: number, HW: number, EC: number, DC: string) {
+  async PDraft(LW: number, HW: number, DC: string) {
     const curDrafts = await this.waveRepository.find({ where: { status: "draft" } });
-    if (DC === "") return;
     if (curDrafts.length === 0) return;
-    await this.waveRepository.update(curDrafts[0].id, {status: "OK", desc: DC, lowWave: LW, highWave: HW, effClass: EC});
+    await this.waveRepository.update(curDrafts[0].id, {status: "OK", desc: DC, lowWave: LW, highWave: HW});
   }
 
   async DDraft(reqID: number) {

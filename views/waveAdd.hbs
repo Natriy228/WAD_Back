@@ -17,8 +17,10 @@
 			<div id="editContainer" style="grid-area:1/1; height:100%; display:grid; align-items:end">
 				
 				<form method="POST" action="/save-draft" style="display:grid; width:98%; margin-bottom:10%; padding-left:1%">
-					<input placeholder="Картинка" class="standartInput oneLineInput" id="img" name="img" type="text" value="{{foundCard.img}}">
-					<input placeholder="Видео" class="standartInput oneLineInput" id="vid" name="vid" type="text" style="margin-top:1%" value="{{foundCard.video}}">
+					<span>Картинка:</span>
+					<input style="width: 100%" type="file" id="img" name="img" value="{{foundCard.img}}" accept="image/png, image/jpeg">
+					<span style="margin-top: 4%">Видео:</span>
+					<input style="width: 100%" type="file" id="vid" name="vid" value="{{foundCard.video}}" accept="video/mp4">
 					<input placeholder="Название" class="standartInput oneLineInput" id="name" name="name" type="text" style="margin-top:1%" value="{{foundCard.name}}">
 					<button class="submitButton" style="margin-top:1%">Сохранить</button>
 				</form>
@@ -26,7 +28,6 @@
 				<form method="POST" action="/public-draft" style="display:grid; width:98%; margin-bottom:25%; padding-left:1%">
 					<input placeholder="~-" class="standartInput oneLineInput" type="text" id="LW" name="LW" style="margin-top:1%" value="{{foundCard.lowWave}}"></td>
 					<input placeholder="~+" class="standartInput oneLineInput" type="text" id="HW" name="HW" style="margin-top:1%" value="{{foundCard.highWave}}"></td>
-					<input placeholder="E" class="standartInput oneLineInput" type="text" id="EC" name="EC" style="margin-top:1%" value="{{foundCard.effClass}}"></td>
 					<input placeholder="Описание" class="standartInput multiLineInput" type="text" id="desc" style="margin-top:1%" name="desc" value="{{foundCard.desc}}"></td>
 					<button class="submitButton" style="margin-top:1%">Опубликовать</button>
 				</form>

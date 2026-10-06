@@ -137,7 +137,9 @@ body {
 	scrollbar-width: none
 }
 
-
+.defaultSlider {
+	width: 100%;
+}
 
 
 

@@ -11,7 +11,7 @@ export class Wave {
   @Column({ type: 'varchar', length: 100 })
   name: string;
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ type: 'varchar', length: 255, nullable: true })
   desc: string;
 
   @Column({ type: 'real' })
@@ -19,9 +19,6 @@ export class Wave {
 
   @Column({ type: 'real' })
   highWave: number;
-
-  @Column({ type: 'smallint' })
-  effClass: number;
 
   @Column({ type: 'varchar', length: 255 })
   img: string;
