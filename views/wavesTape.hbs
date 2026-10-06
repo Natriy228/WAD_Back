@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Лента</title>
-    <link rel="stylesheet" href="/WPCdesign.css">
+    <link rel="stylesheet" href="/waveGlobalDesign.css">
 </head>
 <body>
     <div class="mainFrame">
@@ -19,7 +19,7 @@
 				<div class="sideButtonContainer" style="margin-bottom:5%">
 					<div>
 						<button class="controlButton"><image src="/icons/button_notliked.png" style="width:64px; height:64px"></image></button>
-						<div style="font-size:28px; color:#E1E3E6; text-align:center; text-shadow: 2px 2px 5px black">{{foundCard.likes}}</div>
+						<div style="font-size:28px; color:black; text-align:center; text-shadow: 2px 2px 5px white">{{likes}}</div>
 					</div>
 				</div>
 				
@@ -32,12 +32,12 @@
 					</div>
 				</div>
 				
-				<div style="width:100%; font-weight: bold; font-size:32px; text-shadow: 2px 2px 5px black; color:#E1E3E6; margin-bottom:5%; margin-left:4%">{{foundCard.name}} (Эфф.: {{foundCard.effClass}})</div>
-				<div style="width:100%; font-size:20px; color:#E1E3E6; text-shadow: 2px 2px 2px black; margin-bottom:30%; margin-left:4%">({{foundCard.lowWave}} ГГц - {{foundCard.highWave}} ГГц) {{foundCard.desc}}</div>
+				<div style="width:100%; font-weight: bold; font-size:32px; text-shadow: 2px 2px 5px white; color:black; margin-bottom:5%; margin-left:4%">{{foundCard.name}} (Эфф.: {{foundCard.effClass}})</div>
+				<div style="width:100%; font-size:20px; color:black; text-shadow: 2px 2px 2px white; margin-bottom:30%; margin-left:4%">({{foundCard.lowWave}} ГГц - {{foundCard.highWave}} ГГц) {{foundCard.desc}}</div>
 				
 			</div>
 			
-			{{> footer}}
+			{{> wavesFooter}}
 
 		</div>
 		

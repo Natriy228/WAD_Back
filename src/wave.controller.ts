@@ -1,5 +1,5 @@
 import { Controller, Get, Render, Param, Query } from '@nestjs/common';
-import { WavesService } from './app.service';
+import { WavesService } from './wave.service';
 
 @Controller()
 export class WavesController {
@@ -7,7 +7,7 @@ export class WavesController {
   constructor(private readonly cardsService: WavesService) {}
 
   @Get('waves')
-  @Render('tile')
+  @Render('wavesTile')
   getTiles(@Query('waveLength') reqWave: number) {
     if (reqWave) {
       return {
@@ -20,29 +20,30 @@ export class WavesController {
   }
 
   @Get('waves/:id')
-  @Render('tape')
+  @Render('wavesTape')
   getTilesById(@Param('id') id: string, @Query('next') next: boolean) {
     let curIDCard = this.cardsService.findByID(+id)
     let nextIDCard = this.cardsService.findByID(+id + 1)
 
-    if (curIDCard === undefined) {
-      return { foundCard: this.cardsService.findByID(1) }
+    if (curIDCard[0] === undefined) {
+      const waveData = this.cardsService.findByID(1);
+      return { foundCard: waveData[0], likes: waveData[1] }
     }
 
     if (next) {
-      if (nextIDCard) {
-        return { foundCard: nextIDCard }
+      if (nextIDCard[0]) {
+        return { foundCard: nextIDCard[0], likes: nextIDCard[1] }
       }
       else {
-        return { foundCard: curIDCard }
+        return { foundCard: curIDCard[0], likes: curIDCard[1] }
       }
     }
 
-    return { foundCard: curIDCard }
+    return { foundCard: curIDCard[0], likes: curIDCard[1] }
   }
 
-  @Get('new')
-  @Render('add')
+  @Get('newWave')
+  @Render('waveAdd')
   getCreatingTile() {
     return {
       foundCard: this.cardsService.findRedacting()

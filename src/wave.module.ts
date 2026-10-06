@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { WavesController } from './app.controller';
-import { WavesService } from './app.service';
+import { WavesController } from './wave.controller';
+import { WavesService } from './wave.service';
 
 @Module({
   imports: [],
