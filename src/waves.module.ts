@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { WavesController } from './app.controller';
-import { WavesService } from './app.service';
+import { WavesController } from './waves.controller';
+import { WavesService } from './waves.service';
 
 import { User } from './entities/user.entity'
 import { Wave } from './entities/wave.entity'

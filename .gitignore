@@ -1,4 +1,5 @@
 .env
+todolist.txt
 
 # compiled output
 /dist

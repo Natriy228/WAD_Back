@@ -1,5 +1,5 @@
 import { Controller, Get, Render, Param, Query, Post, Redirect, Body } from '@nestjs/common';
-import { WavesService } from './app.service';
+import { WavesService } from './waves.service';
 
 
 
@@ -9,7 +9,7 @@ export class WavesController {
   constructor(private readonly cardsService: WavesService) {}
 
   @Get('waves')
-  @Render('tile')
+  @Render('wavesTile')
   async getTiles(@Query('waveLength') reqWave: number) {
     if (reqWave) {
       const reqList = await this.cardsService.findByWave(reqWave)
@@ -21,7 +21,7 @@ export class WavesController {
   }
 
   @Get('waves/:id')
-  @Render('tape')
+  @Render('wavesTape')
   async getTilesById(@Param('id') id: string, @Query('next') next: boolean) {
     const curIDCard = await this.cardsService.findByID(+id)
     const nextIDCard = await this.cardsService.findByID(+id + 1)
@@ -49,8 +49,8 @@ export class WavesController {
     return { foundCard: curIDCard[0], likes: likesCount }
   }
 
-  @Get('new')
-  @Render('add')
+  @Get('newWave')
+  @Render('waveAdd')
   async getCreatingTile() {
     const redactingCard = await this.cardsService.findRedacting()
     if (redactingCard.length != 0) {
@@ -59,7 +59,7 @@ export class WavesController {
   }
 
   @Post('save-draft')
-  @Redirect('/new', 302)
+  @Redirect('/newWave', 302)
   async loadDraft(@Body('name') name: string, @Body('img') img: string, @Body('vid') vid: string) {
     if (name == undefined || img == undefined || vid == undefined) return;
     await this.cardsService.CUDraft(name, img, vid);

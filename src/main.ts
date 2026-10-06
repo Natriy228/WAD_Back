@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from './waves.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 
