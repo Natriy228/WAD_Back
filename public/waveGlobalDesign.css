@@ -1,0 +1,211 @@
+/*Основное*/
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: lightgray;
+}
+
+.mainFrame {
+	background: white;
+	width: 608px;
+	max-width: 100%;
+	min-height: 100vh;
+}
+
+.mainContainer {
+	display:grid;
+	align-items:end;
+	grid-template-columns:1fr;
+	grid-template-rows:1fr;
+	width:100%;
+	height:100vh
+}
+
+
+
+
+
+
+
+
+/*Панель управления*/
+.controlPanelMain {
+	background: #365edc;
+	border: 1px solid white;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	box-sizing: border-box;
+	height: 5.72vh;
+	width: 100%;
+}
+
+.controlPanelCircle {
+	background: #365edc;
+	border: 1px solid white;
+	border-radius: 50%;
+	box-sizing: border-box;
+	margin-left: 50%;
+    transform: translate(-50%, 0%);
+	height: 9.15vh;
+	aspect-ratio: 1;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.controlButton {
+	background: rgba(0, 0, 0, 0);
+	border: 0;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/*Страница плитки*/
+.waveCard {
+    position: relative;
+    width: 47.76%;
+    height: 380px;
+    overflow: hidden;
+    background-color: #6e6e6e;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.waveCardContent {
+	position: relative;
+	z-index: 2;
+	padding: 16px 16px 0 16px;
+}
+
+.waveCardTitle {
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 18;
+	color: black;
+	text-shadow: 2px 2px 5px white
+}
+
+.waveCardDescription {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 14;
+	line-height: 1.17;
+	color: black;
+	text-shadow: 2px 2px 5px white
+}
+
+.waveCardButton {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	padding: 12px 0;
+	background-color: #365edc;
+	color: white;
+	text-align: center;
+	font-size: 18;
+	border: 0;
+	cursor: pointer;
+}
+.waveCardButton:active {
+	background-color: lightblue;
+}
+
+.cardsTile {
+	width: 100%;
+	margin-top: 4px;
+	display: flex;
+	justify-content: flex-start;
+	gap: 8px 1.49%;
+	margin-left: 1.49%;
+	flex-wrap: wrap;
+	max-height: 88vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scrollbar-width: none
+}
+
+.defaultSlider {
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+/*Страница добавления*/
+.oneLineInput {
+	width:100%;
+	height:4.58vh
+}
+
+.multiLineInput {
+	width:100%;
+	height:9.16vh
+}
+
+.standartInput {
+	background: white;
+	border: 0;
+	border-radius: 3px;
+	box-sizing: border-box;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 16px;
+	color: black;
+}
+
+.submitButton {
+	background: #365edc;
+	border: 0;
+	cursor: pointer;
+	color: white;
+	width:100%;
+	height:9.16vh;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px
+}
+.submitButton:active {
+	background: lightblue
+}
+
+.fileSearchButton {
+	background: rgba(0, 0, 0, 0);
+	border-width: 5px;
+	border-style: dashed;
+	border-color: black;
+	border-radius: 20px;
+	cursor: pointer;
+	color: #E1E3E6;
+	aspect-ratio:1
+}
+.fileSearchButton:active {
+	border-color: grey
+}
+
+
+
+
+
+
+
+/*Лента*/
+.sideButtonContainer {
+	width: 100%;
+	display: grid;
+	justify-content: right
+}
