@@ -272,7 +272,7 @@ export class WavesService {
       }
 
       // Загружаем новое изображение в MinIO
-      const videoUrl = await this.minioService.uploadProductImage(file.buffer, id);
+      const videoUrl = await this.minioService.uploadProductVideo(file.buffer, id);
 
       // Обновляем запись товара с новым URL изображения
       const updatedWave = await this.wavesRepository.update(id, { video: videoUrl });

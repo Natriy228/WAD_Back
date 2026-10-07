@@ -51,6 +51,24 @@ export class MinioSimpleService {
     return `${protocol}://${endpoint}:${port}/${this.bucketName}/${fileName}`;
   }
 
+  async uploadProductVideo(file: Buffer, productId: number): Promise<string> {
+    const fileName = `product-${productId}-${Date.now()}.mp4`;
+    
+    await this.minioClient.putObject(
+      this.bucketName,
+      fileName,
+      file,
+      file.length,
+      { 'Content-Type': 'video/mp4' }
+    );
+
+    const protocol = this.configService.get<string>('MINIO_USE_SSL') === 'true' ? 'https' : 'http';
+    const endpoint = this.configService.get<string>('MINIO_ENDPOINT');
+    const port = this.configService.get<number>('MINIO_PORT');
+    
+    return `${protocol}://${endpoint}:${port}/${this.bucketName}/${fileName}`;
+  }
+
   async getSignedUrl(fileName: string | undefined): Promise<string | null> {
     if (!fileName) {
       return null;
